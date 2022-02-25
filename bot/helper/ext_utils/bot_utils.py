@@ -20,8 +20,8 @@ PAGE_NO = 1
 
 
 class MirrorStatus:
-    STATUS_UPLOADING = "Uploading 📤"
-    STATUS_DOWNLOADING = "Downloading 📥"
+    STATUS_UPLOADING = "Uploading ⬆️"
+    STATUS_DOWNLOADING = "Downloading ⬇️"
     STATUS_CLONING = "Cloning ♻️"
     STATUS_WAITING = "Queued 💤"
     STATUS_FAILED = "Failed 🚫"
@@ -243,6 +243,10 @@ def is_gdrive_link(url: str):
 
 def is_gdtot_link(url: str):
     url = match(r'https?://.*\.gdtot\.\S+', url)
+    return bool(url)
+
+def is_appdrive_link(url: str):
+    url = match(r'https?://.*\.appdrive\.\S+', url)
     return bool(url)
 
 def is_mega_link(url: str):
